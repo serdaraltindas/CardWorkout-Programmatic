@@ -8,7 +8,5 @@ class CardSelectionVC: UIViewController {
         view.backgroundColor = .black
         
     }
-    
 
- 
 }
