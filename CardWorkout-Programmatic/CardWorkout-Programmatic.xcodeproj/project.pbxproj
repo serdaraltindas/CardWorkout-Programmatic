@@ -58,10 +58,10 @@
 			children = (
 				AEACAC7E2A05224200A72EF0 /* Delegate */,
 				AEACAC7C2A051FA000A72EF0 /* CardSelectionVC.swift */,
+				AEACAC7F2A05247100A72EF0 /* CWButton.swift */,
 				AEACAC712A051F3B00A72EF0 /* Assets.xcassets */,
 				AEACAC732A051F3B00A72EF0 /* LaunchScreen.storyboard */,
 				AEACAC762A051F3B00A72EF0 /* Info.plist */,
-				AEACAC7F2A05247100A72EF0 /* CWButton.swift */,
 			);
 			path = "CardWorkout-Programmatic";
 			sourceTree = "<group>";

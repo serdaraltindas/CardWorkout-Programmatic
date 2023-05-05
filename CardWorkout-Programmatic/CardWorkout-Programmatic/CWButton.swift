@@ -2,7 +2,7 @@
 import UIKit
 
 class CWButton: UIButton {
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -24,5 +24,5 @@ class CWButton: UIButton {
         setTitleColor(.white, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
     }
-
+    
 }
