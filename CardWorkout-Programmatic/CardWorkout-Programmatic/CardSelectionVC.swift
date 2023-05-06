@@ -1,19 +1,38 @@
 import UIKit
 
 class CardSelectionVC: UIViewController {
-    
     //3 Button and ImageView
     let cardImageView  = UIImageView()
-    let stopButton    = CWButton(backgroundColor: .systemRed , title: "Stop!")
-    let resetButton   = CWButton(backgroundColor: .systemGreen, title: "Reset")
-    let rulesButton   = CWButton(backgroundColor: .systemBlue, title: "Rules")
+    let stopButton     = CWButton(backgroundColor: .systemRed , title: "Stop!")
+    let resetButton    = CWButton(backgroundColor: .systemGreen, title: "Reset")
+    let rulesButton    = CWButton(backgroundColor: .systemBlue, title: "Rules")
+    
+    var cards          = CardDeck.allValues
+    var timer          : Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //Background
         view.backgroundColor = .systemBackground
         configureUI()
+        starTimer()
+    }
+    
+    func starTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.1 , target: self, selector: #selector(showRandomCard), userInfo: nil, repeats: true)
+    }
+    
+    @objc func showRandomCard() {
+        cardImageView.image = cards.randomElement()
+    }
+    
+    @objc func resetTimer() {
+        stopTimer()
+        starTimer()
+    }
+    
+    @objc func stopTimer() {
+        timer.invalidate()
     }
     
     func configureUI() {
@@ -38,6 +57,7 @@ class CardSelectionVC: UIViewController {
     
     func configureStopButton() {
         view.addSubview(stopButton)
+        stopButton.addTarget(self, action: #selector(stopTimer), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             stopButton.widthAnchor.constraint(equalToConstant: 260),
@@ -49,6 +69,7 @@ class CardSelectionVC: UIViewController {
     
     func configureResetButton() {
         view.addSubview(resetButton)
+        resetButton.addTarget(self, action: #selector(resetTimer), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             resetButton.widthAnchor.constraint(equalToConstant: 115),
