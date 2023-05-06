@@ -3,9 +3,9 @@ import UIKit
 class CardSelectionVC: UIViewController {
     //3 Button and ImageView
     let cardImageView  = UIImageView()
-    let stopButton     = CWButton(backgroundColor: .systemRed , title: "Stop!")
-    let resetButton    = CWButton(backgroundColor: .systemGreen, title: "Reset")
-    let rulesButton    = CWButton(backgroundColor: .systemBlue, title: "Rules")
+    let stopButton     = CWButton(color: .systemRed   , title: "Stop!", systemImageName: "stop.circle")
+    let resetButton    = CWButton(color: .systemGreen , title: "Reset", systemImageName: "arrow.clockwise.circle")
+    let rulesButton    = CWButton(color: .systemBlue  , title: "Rules", systemImageName: "list.bullet")
     
     var cards          = CardDeck.allValues
     var timer          : Timer!
@@ -83,6 +83,7 @@ class CardSelectionVC: UIViewController {
     func configureRulesButton() {
         view.addSubview(rulesButton)
         rulesButton.addTarget(self, action: #selector(presentRulesVC), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             rulesButton.widthAnchor.constraint(equalToConstant: 115),
             rulesButton.heightAnchor.constraint(equalToConstant: 50),
