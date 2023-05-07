@@ -1,9 +1,8 @@
-//
-//  RulesVC.swift
-//  CardWorkout-Programmatic
-//
-//  Created by Serdar Altındaş on 6.05.2023.
-//
+
+//iOS Development
+//Tavsiye edilen siteler; Twitter, WWDC for apple developers.
+//SwiftUI 2019 yılında ortaya çıktı.(AngelaYu)
+//Kaliforniyada yapılan toplantıya herkes gidiyor.
 
 import UIKit
 
